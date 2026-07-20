@@ -10,7 +10,7 @@ import argparse
 import ast
 from datetime import datetime
 import json
-import os
+import ntpath
 from pathlib import Path
 import re
 import sys
@@ -63,8 +63,15 @@ PROCESS_NAME_EXCLUSIONS = {
     "firefox.exe",
     "code.exe",
     "devenv.exe",
+    "windowsterminal.exe",
+    "powershell.exe",
+    "pwsh.exe",
     "python.exe",
     "pythonw.exe",
+}
+LOGIKAL_BACKGROUND_PROCESSES = {
+    "zebedee.exe",
+    "ofcas.lk.localagent.exe",
 }
 PATTERN_ATTRIBUTES = {
     "selection": "iface_selection",
@@ -226,20 +233,68 @@ def score_candidate_control(metadata: dict[str, Any]) -> int:
     return score
 
 
-def looks_like_logikal_executable(name: str | None, executable: str | None) -> bool:
-    candidates = []
-    if name:
-        candidates.append(Path(name).name.casefold())
-    if executable:
-        candidates.append(Path(executable).name.casefold())
-    if any(candidate in PROCESS_NAME_EXCLUSIONS for candidate in candidates):
-        return False
-    for candidate in candidates:
-        stem = Path(candidate).stem
-        normalized = re.sub(r"[^a-z0-9]", "", stem)
-        if re.fullmatch(r"logikal(?:x?64|x?86|\d[0-9a-z]*)?", normalized):
-            return True
-    return False
+def _executable_basename(name: str | None, executable: str | None) -> str:
+    source = name or ntpath.basename(executable or "")
+    return ntpath.basename(source).casefold()
+
+
+def _is_supported_logikal_ui_name(name: str | None, executable: str | None) -> bool:
+    basename = _executable_basename(name, executable)
+    if basename == "winstart.exe":
+        return True
+    stem = ntpath.splitext(basename)[0]
+    normalized = re.sub(r"[^a-z0-9]", "", stem)
+    return bool(re.fullmatch(r"logikal(?:x?64|x?86|\d[0-9a-z]*)?", normalized))
+
+
+def evaluate_logikal_process_identity(
+    name: str | None,
+    executable: str | None,
+    windows: Iterable[dict[str, Any]],
+) -> dict[str, Any]:
+    """Evaluate independent, read-only evidence for the main LogiKal UI PID."""
+    basename = _executable_basename(name, executable)
+    install_directory = ntpath.dirname(str(executable or "")).casefold()
+    known_unrelated = basename in PROCESS_NAME_EXCLUSIONS
+    background_process = basename in LOGIKAL_BACKGROUND_PROCESSES
+    supported_ui_name = _is_supported_logikal_ui_name(name, executable)
+    installation_path_matches = (
+        "logikal" in install_directory or "orgadata" in install_directory
+    )
+
+    matching_window_titles: list[str] = []
+    all_window_titles: list[str] = []
+    for window in preserve_display_order(windows):
+        title = str(window.get("title") or "")
+        all_window_titles.append(title)
+        if re.search(r"(?i)(?<![a-z0-9])logikal(?![a-z0-9])", title):
+            matching_window_titles.append(title)
+    owns_logikal_window = bool(matching_window_titles)
+
+    reasons: list[str] = []
+    if known_unrelated:
+        reasons.append("executable is a known unrelated application")
+    if background_process:
+        reasons.append("executable is a related non-UI background process")
+    if not supported_ui_name:
+        reasons.append("executable name is not an approved LogiKal UI executable")
+    if not installation_path_matches:
+        reasons.append("executable directory contains neither Logikal nor Orgadata")
+    if not owns_logikal_window:
+        reasons.append("PID owns no top-level window whose title matches LogiKal")
+
+    return {
+        "accepted": not reasons,
+        "executable_basename": basename,
+        "known_unrelated_executable": known_unrelated,
+        "related_background_process": background_process,
+        "supported_ui_executable_name": supported_ui_name,
+        "installation_path_matches": installation_path_matches,
+        "owns_logikal_window": owns_logikal_window,
+        "all_window_titles": all_window_titles,
+        "matching_window_titles": matching_window_titles,
+        "rejection_reasons": reasons,
+    }
 
 
 def _element_info(control: Any, errors: list[str], label: str) -> Any:
@@ -857,11 +912,13 @@ def _process_info(pid: int, errors: list[str]) -> dict[str, Any] | None:
         process = psutil.Process(pid)
         name = safe_read(f"process {pid} name", process.name, errors, "")
         executable = safe_read(f"process {pid} executable", process.exe, errors, "")
+        windows = _native_windows(pid, errors)
         return {
             "pid": pid,
             "name": name,
             "executable": executable,
-            "windows": _native_windows(pid, errors),
+            "windows": windows,
+            "identity": evaluate_logikal_process_identity(name, executable, windows),
         }
     except Exception as exc:
         errors.append(f"PROCESS {pid}: {type(exc).__name__}: {exc}")
@@ -875,16 +932,26 @@ def _find_logikal_processes(errors: list[str]) -> list[dict[str, Any]]:
     for process in psutil.process_iter(["pid", "name", "exe"]):
         try:
             info = process.info
-            if not looks_like_logikal_executable(info.get("name"), info.get("exe")):
+            if not _is_supported_logikal_ui_name(info.get("name"), info.get("exe")):
                 continue
-            candidates.append(
-                {
-                    "pid": info["pid"],
-                    "name": info.get("name") or "",
-                    "executable": info.get("exe") or "",
-                    "windows": _native_windows(info["pid"], errors),
-                }
+            windows = _native_windows(info["pid"], errors)
+            identity = evaluate_logikal_process_identity(
+                info.get("name"), info.get("exe"), windows
             )
+            process_record = {
+                "pid": info["pid"],
+                "name": info.get("name") or "",
+                "executable": info.get("exe") or "",
+                "windows": windows,
+                "identity": identity,
+            }
+            if identity["accepted"]:
+                candidates.append(process_record)
+            else:
+                errors.append(
+                    f"PROCESS IDENTITY REJECTED PID {info['pid']}: "
+                    f"{json.dumps(identity, ensure_ascii=False, sort_keys=True)}"
+                )
         except Exception as exc:
             errors.append(
                 f"PROCESS ENUMERATION {getattr(process, 'pid', '?')}: "
@@ -904,6 +971,20 @@ def _format_processes(processes: list[dict[str, Any]]) -> str:
                 f"EXECUTABLE_PATH={process.get('executable')}",
             ]
         )
+        identity = process.get("identity") or {}
+        for key in (
+            "accepted",
+            "executable_basename",
+            "known_unrelated_executable",
+            "related_background_process",
+            "supported_ui_executable_name",
+            "installation_path_matches",
+            "owns_logikal_window",
+            "all_window_titles",
+            "matching_window_titles",
+            "rejection_reasons",
+        ):
+            lines.append(f"IDENTITY_{key.upper()}={identity.get(key)}")
         windows = process.get("windows") or []
         if not windows:
             lines.append("WINDOW=<none exposed>")
@@ -1118,14 +1199,17 @@ def main(argv: list[str] | None = None) -> int:
         if process is None:
             print(f"Cannot read process PID {args.pid}.", file=sys.stderr)
             return 3
-        if not looks_like_logikal_executable(
-            str(process.get("name") or ""), str(process.get("executable") or "")
-        ):
+        print("EXPLICIT PID IDENTITY SIGNALS")
+        print(_format_processes([process]))
+        identity = process.get("identity") or {}
+        if not identity.get("accepted"):
             print(
-                f"PID {args.pid} was rejected because its executable is not identifiable as LogiKal.",
+                f"PID {args.pid} was rejected as the LogiKal UI process. "
+                f"Reasons: {identity.get('rejection_reasons')}",
                 file=sys.stderr,
             )
             return 3
+        print(f"PID {args.pid} accepted as the LogiKal UI process.")
 
     pid = int(process["pid"])
     try:

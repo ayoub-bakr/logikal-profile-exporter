@@ -11,9 +11,12 @@ scroll, move windows, close dialogs, or export files. Before process inspection,
 it parses its own source and refuses to run if a prohibited state-changing call
 exists outside comments or string literals.
 
-The utility identifies candidate processes from the executable name/path, not
-from a broad window-title match. A browser whose title contains "Logikal" is not
-accepted as a LogiKal process.
+The utility identifies candidate processes from independent executable,
+installation-path, and PID-owned-window evidence, not from a broad window-title
+match. `WinStart.exe` is accepted only when it is installed below a path
+containing `Logikal` or `Orgadata` and owns a top-level window matching
+`LogiKal`. Browsers, shells, editors, `zebedee.exe`, and
+`Ofcas.Lk.LocalAgent.exe` are not accepted as the main UI process.
 
 ## Usage
 
