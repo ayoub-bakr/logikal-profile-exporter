@@ -1,0 +1,68 @@
+{
+  "_comment": "German-language Logikal UI selectors. Populate/verify via scripts/discover_ui.py before use. AutomationId values are usually language-independent; titles/menu paths are not.",
+
+  "main_window": {
+    "title_re": ".*Logikal.*",
+    "class_name": null
+  },
+
+  "add_profile": {
+    "menu_path": "Profil -> Profil hinzufuegen",
+    "keyboard_shortcut": "{F5}",
+    "window_title_re": "Profil hinzufuegen.*"
+  },
+
+  "manufacturer_combo": {
+    "auto_id": "cboManufacturer",
+    "control_type": "ComboBox",
+    "fallback": "type_and_enter"
+  },
+
+  "system_combo": {
+    "auto_id": "cboSystem",
+    "control_type": "ComboBox",
+    "fallback": "type_and_enter"
+  },
+
+  "article_list": {
+    "auto_id": "lstArticles",
+    "control_type": "List",
+    "fallback": "arrow_keys_read_selected_field"
+  },
+
+  "ok_button": {
+    "auto_id": "btnOK",
+    "title": "OK",
+    "control_type": "Button",
+    "fallback": "{ENTER}"
+  },
+
+  "export_drawing": {
+    "menu_path": "Datei -> Export -> Zeichnung",
+    "keyboard_shortcut": "^e",
+    "window_title_re": "Zeichnung exportieren.*"
+  },
+
+  "export_format_dxf": {
+    "auto_id": "cboFormat",
+    "value": "DXF"
+  },
+
+  "save_as": {
+    "filename_field_auto_id": "1148",
+    "filename_field_control_type": "Edit",
+    "save_button_title": "Speichern",
+    "save_button_control_type": "Button",
+    "window_title_re": "Speichern unter.*"
+  },
+
+  "overwrite_dialog": {
+    "window_title_re": ".*(ersetzen|ueberschreiben).*",
+    "confirm_button_title": "Ja"
+  },
+
+  "unexpected_popup": {
+    "window_class_name_re": "#32770",
+    "close_button_title": "OK"
+  }
+}

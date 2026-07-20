@@ -1,0 +1,38 @@
+Control Identifiers:
+
+Menu - 'Context'    (L365, T46, R554, B281)
+['Menu', 'Context', 'ContextMenu']
+child_window(title="Context", control_type="Menu")
+   | 
+   | MenuItem - ''    (L368, T49, R551, B71)
+   | ['MenuItem', 'MenuItem0', 'MenuItem1']
+   | child_window(auto_id="274", control_type="MenuItem")
+   | 
+   | MenuItem - ''    (L368, T71, R551, B93)
+   | ['MenuItem2']
+   | child_window(auto_id="275", control_type="MenuItem")
+   | 
+   | MenuItem - ''    (L368, T93, R551, B115)
+   | ['MenuItem3']
+   | 
+   | MenuItem - ''    (L368, T118, R551, B140)
+   | ['MenuItem4']
+   | 
+   | MenuItem - ''    (L368, T140, R551, B162)
+   | ['MenuItem5']
+   | 
+   | MenuItem - ''    (L368, T165, R551, B187)
+   | ['MenuItem6']
+   | 
+   | MenuItem - ''    (L368, T187, R551, B209)
+   | ['MenuItem7']
+   | 
+   | MenuItem - ''    (L368, T212, R551, B234)
+   | ['MenuItem8']
+   | 
+   | MenuItem - ''    (L368, T234, R551, B256)
+   | ['MenuItem9']
+   | 
+   | MenuItem - ''    (L368, T256, R551, B278)
+   | ['MenuItem10']
+   | child_window(auto_id="388", control_type="MenuItem")

@@ -1,0 +1,241 @@
+Control Identifiers:
+
+Dialog - 'تعرف على Logikal - Google Chrome'    (L0, T0, R0, B0)
+['Dialog', 'تعرف على Logikal - Google Chrome', 'تعرف على Logikal - Google ChromeDialog', 'تعرف على Logikal - Google Chrome0', 'تعرف على Logikal - Google Chrome1']
+child_window(title="تعرف على Logikal - Google Chrome", control_type="Window")
+   | 
+   | Pane - ''    (L-31992, T-32000, R-30072, B-30968)
+   | ['Pane', 'Pane0', 'Pane1']
+   | 
+   | Pane - 'تعرف على Logikal - Google Chrome'    (L0, T0, R0, B0)
+   | ['تعرف على Logikal - Google Chrome2', 'تعرف على Logikal - Google ChromePane', 'Pane2']
+   | child_window(title="تعرف على Logikal - Google Chrome", control_type="Pane")
+   |    | 
+   |    | Pane - ''    (L0, T0, R0, B0)
+   |    | ['Pane3']
+   |    |    | 
+   |    |    | Pane - ''    (L0, T0, R0, B0)
+   |    |    | ['Pane4']
+   |    |    |    | 
+   |    |    |    | Pane - ''    (L-32129, T-31999, R-31992, B-31960)
+   |    |    |    | ['Pane5']
+   |    |    |    |    | 
+   |    |    |    |    | Button - 'Minimize'    (L-32129, T-31999, R-32084, B-31960)
+   |    |    |    |    | ['MinimizeButton', 'Minimize', 'Button', 'Button0', 'Button1']
+   |    |    |    |    | child_window(title="Minimize", auto_id="view_1", control_type="Button")
+   |    |    |    |    | 
+   |    |    |    |    | Button - 'Maximize'    (L-32084, T-31999, R-32038, B-31960)
+   |    |    |    |    | ['Maximize', 'Button2', 'MaximizeButton']
+   |    |    |    |    | child_window(title="Maximize", auto_id="view_2", control_type="Button")
+   |    |    |    |    | 
+   |    |    |    |    | Button - 'Close'    (L-32038, T-31999, R-31992, B-31960)
+   |    |    |    |    | ['Close', 'CloseButton', 'Button3', 'Close0', 'Close1', 'CloseButton0', 'CloseButton1']
+   |    |    |    |    | child_window(title="Close", auto_id="view_4", control_type="Button")
+   |    |    |    | 
+   |    |    |    | Pane - ''    (L0, T0, R0, B0)
+   |    |    |    | ['Pane6']
+   |    |    |    |    | 
+   |    |    |    |    | Pane - ''    (L-31992, T-31960, R-30072, B-31880)
+   |    |    |    |    | ['Pane7']
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Toolbar - ''    (L-31992, T-31960, R-30072, B-31914)
+   |    |    |    |    |    | ['ToolbarForward', 'ToolbarReload', 'ToolbarAyoub', 'ToolbarHome', 'ToolbarChrome', 'Toolbar', 'Toolbar0', 'Toolbar1']
+   |    |    |    |    |    | child_window(auto_id="view_1000", control_type="ToolBar")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Button - 'Back'    (L-31992, T-31954, R-31952, B-31920)
+   |    |    |    |    |    |    | ['BackButton', 'Back', 'Button4']
+   |    |    |    |    |    |    | child_window(title="Back", auto_id="view_1001", control_type="Button")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Button - 'Forward'    (L-31950, T-31954, R-31916, B-31920)
+   |    |    |    |    |    |    | ['Forward', 'Button5', 'ForwardButton']
+   |    |    |    |    |    |    | child_window(title="Forward", auto_id="view_1002", control_type="Button")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Button - 'Reload'    (L-31914, T-31954, R-31880, B-31920)
+   |    |    |    |    |    |    | ['ReloadButton', 'Reload', 'Button6']
+   |    |    |    |    |    |    | child_window(title="Reload", auto_id="view_1003", control_type="Button")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Button - 'Home'    (L-31878, T-31954, R-31844, B-31920)
+   |    |    |    |    |    |    | ['Home', 'Button7', 'HomeButton']
+   |    |    |    |    |    |    | child_window(title="Home", auto_id="view_1004", control_type="Button")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | GroupBox - ''    (L-31835, T-31954, R-30247, B-31920)
+   |    |    |    |    |    |    | ['GroupBox']
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Button - 'View site information'    (L-31830, T-31949, R-31806, B-31925)
+   |    |    |    |    |    |    |    | ['Button8', 'View site informationButton', 'View site information']
+   |    |    |    |    |    |    |    | child_window(title="View site information", auto_id="view_1011", control_type="Button")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Edit - 'chatgpt.com/c/6a5c861e-fa14-83ea-9d8e-01eba24a6e0e'    (L-31798, T-31949, R-30291, B-31925)
+   |    |    |    |    |    |    |    | ['Edit']
+   |    |    |    |    |    |    |    | child_window(title="chatgpt.com/c/6a5c861e-fa14-83ea-9d8e-01eba24a6e0e", auto_id="view_1012", control_type="Edit")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Pane - ''    (L-30283, T-31949, R-30259, B-31925)
+   |    |    |    |    |    |    |    | ['Pane8']
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - 'Bookmark this tab'    (L-30283, T-31949, R-30259, B-31925)
+   |    |    |    |    |    |    |    |    | ['Bookmark this tabButton', 'Bookmark this tab', 'Button9']
+   |    |    |    |    |    |    |    |    | child_window(title="Bookmark this tab", control_type="Button")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Pane - ''    (L0, T0, R0, B0)
+   |    |    |    |    |    |    |    | ['Pane9']
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - ''    (L-30238, T-31954, R-30204, B-31920)
+   |    |    |    |    |    |    | ['Pane10']
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Button - 'Extensions'    (L-30238, T-31954, R-30204, B-31920)
+   |    |    |    |    |    |    |    | ['ExtensionsButton', 'Button10', 'Extensions']
+   |    |    |    |    |    |    |    | child_window(title="Extensions", auto_id="view_1006", control_type="Button")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - ''    (L-30195, T-31945, R-30193, B-31929)
+   |    |    |    |    |    |    | ['Pane11']
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - ''    (L-30184, T-31954, R-30150, B-31920)
+   |    |    |    |    |    |    | ['Pane12']
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Button - 'Downloads'    (L-30184, T-31954, R-30150, B-31920)
+   |    |    |    |    |    |    |    | ['DownloadsButton', 'Button11', 'Downloads']
+   |    |    |    |    |    |    |    | child_window(title="Downloads", control_type="Button")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Button - 'Ayoub'    (L-30148, T-31954, R-30114, B-31920)
+   |    |    |    |    |    |    | ['Button12', 'AyoubButton', 'Ayoub']
+   |    |    |    |    |    |    | child_window(title="Ayoub", auto_id="view_1018", control_type="Button")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Button - 'Chrome'    (L-30112, T-31954, R-30072, B-31920)
+   |    |    |    |    |    |    | ['ChromeButton', 'Chrome', 'Button13']
+   |    |    |    |    |    |    | child_window(title="Chrome", auto_id="view_1007", control_type="Button")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Toolbar - 'Bookmarks'    (L-31992, T-31914, R-30072, B-31880)
+   |    |    |    |    |    | ['Bookmarks', 'Toolbar2', 'BookmarksToolbar']
+   |    |    |    |    |    | child_window(title="Bookmarks", auto_id="view_1025", control_type="ToolBar")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Toolbar - 'Saved Tab Groups'    (L-31986, T-31914, R-31950, B-31886)
+   |    |    |    |    |    |    | ['Toolbar3', 'Saved Tab Groups', 'Saved Tab GroupsToolbar']
+   |    |    |    |    |    |    | child_window(title="Saved Tab Groups", control_type="ToolBar")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Button - 'Tab groups'    (L-31986, T-31914, R-31958, B-31886)
+   |    |    |    |    |    |    |    | ['Button14', 'Tab groupsButton', 'Tab groups']
+   |    |    |    |    |    |    |    | child_window(title="Tab groups", control_type="Button")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Separator - 'Separator'    (L-31950, T-31908, R-31940, B-31892)
+   |    |    |    |    |    |    | ['SeparatorSeparator', 'Separator', 'SeparatorSeparator0', 'SeparatorSeparator1', 'Separator0', 'Separator1']
+   |    |    |    |    |    |    | child_window(title="Separator", control_type="Separator")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Button - 'Telegram Web'    (L-31940, T-31914, R-31830, B-31886)
+   |    |    |    |    |    |    | ['Button15', 'Telegram Web', 'Telegram WebButton']
+   |    |    |    |    |    |    | child_window(title="Telegram Web", auto_id="view_1028", control_type="Button")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Button - '(3) سأقبل يا خالقي من جديد - اتحداك تحبس دموعك | اسلام صبحي - YouTube'    (L-31826, T-31914, R-31676, B-31886)
+   |    |    |    |    |    |    | ['Button16', '(3) سأقبل يا خالقي من جديد - اتحداك تحبس دموعك | اسلام صبحي - YouTubeButton', '(3) سأقبل يا خالقي من جديد - اتحداك تحبس دموعك | اسلام صبحي - YouTube']
+   |    |    |    |    |    |    | child_window(title="(3) سأقبل يا خالقي من جديد - اتحداك تحبس دموعك | اسلام صبحي - YouTube", auto_id="view_1028", control_type="Button")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Button - 'Adobe Acrobat'    (L-31672, T-31914, R-31557, B-31886)
+   |    |    |    |    |    |    | ['Adobe AcrobatButton', 'Button17', 'Adobe Acrobat']
+   |    |    |    |    |    |    | child_window(title="Adobe Acrobat", auto_id="view_1028", control_type="Button")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Button - 'All Bookmarks'    (L-30194, T-31914, R-30080, B-31886)
+   |    |    |    |    |    |    | ['Button18', 'All BookmarksButton', 'All Bookmarks']
+   |    |    |    |    |    |    | child_window(title="All Bookmarks", auto_id="view_1026", control_type="Button")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Separator - 'Separator'    (L-30212, T-31908, R-30194, B-31892)
+   |    |    |    |    |    |    | ['SeparatorSeparator2', 'Separator2']
+   |    |    |    |    |    |    | child_window(title="Separator", control_type="Separator")
+   |    |    |    |    | 
+   |    |    |    |    | Pane - ''    (L-31992, T-31880, R-30072, B-30968)
+   |    |    |    |    | ['Pane13']
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - ''    (L-31992, T-31880, R-30072, B-30968)
+   |    |    |    |    |    | ['Pane14']
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - ''    (L-31992, T-31879, R-30072, B-30968)
+   |    |    |    |    |    |    | ['Pane15']
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - ''    (L-31992, T-31880, R-30072, B-31879)
+   |    |    |    |    |    |    | ['Pane16']
+   |    |    |    |    | 
+   |    |    |    |    | Pane - ''    (L-31992, T-32000, R-30209, B-31959)
+   |    |    |    |    | ['Pane17']
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - ''    (L-31986, T-32000, R-31958, B-31959)
+   |    |    |    |    |    | ['Pane18']
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Button - 'Tab search'    (L-31986, T-31994, R-31958, B-31966)
+   |    |    |    |    |    |    | ['Tab search', 'Button19', 'Tab searchButton']
+   |    |    |    |    |    |    | child_window(title="Tab search", control_type="Button")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - ''    (L-31964, T-32000, R-30518, B-31959)
+   |    |    |    |    |    | ['Pane19']
+   |    |    |    |    |    | child_window(auto_id="view_21", control_type="Pane")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | TabControl - ''    (L-31964, T-32000, R-30518, B-31959)
+   |    |    |    |    |    |    | ['TabControlLogikal Profile Export Automation', 'TabControlDownload history', 'TabControlDownload Python | Python.org', 'TabControl', 'TabControl4. Using Python on Windows — Python 3.14.6 documentation', 'TabControlتعرف على Logikal - Memory usage - 303 MB']
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | TabItem - '(٧٢) واتساب - High memory usage - 1.0 GB'    (L-31964, T-32000, R-31708, B-31959)
+   |    |    |    |    |    |    |    | ['(٧٢) واتساب - High memory usage - 1.0 GBTabItem', '(٧٢) واتساب - High memory usage - 1.0 GB', 'TabItem', 'TabItem0', 'TabItem1']
+   |    |    |    |    |    |    |    | child_window(title="(٧٢) واتساب - High memory usage - 1.0 GB", auto_id="view_20", control_type="TabItem")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - 'Close'    (L-31750, T-31994, R-31722, B-31966)
+   |    |    |    |    |    |    |    |    | ['Close2', 'CloseButton2', 'Button20']
+   |    |    |    |    |    |    |    |    | child_window(title="Close", control_type="Button")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | TabItem - 'Logikal Profile Export Automation'    (L-31726, T-32000, R-31470, B-31959)
+   |    |    |    |    |    |    |    | ['Logikal Profile Export Automation', 'TabItem2', 'Logikal Profile Export AutomationTabItem']
+   |    |    |    |    |    |    |    | child_window(title="Logikal Profile Export Automation", auto_id="view_20", control_type="TabItem")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - 'Close'    (L-31512, T-31994, R-31484, B-31966)
+   |    |    |    |    |    |    |    |    | ['Close3', 'CloseButton3', 'Button21']
+   |    |    |    |    |    |    |    |    | child_window(title="Close", control_type="Button")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | TabItem - 'تعرف على Logikal - Memory usage - 303 MB'    (L-31488, T-32000, R-31232, B-31959)
+   |    |    |    |    |    |    |    | ['تعرف على Logikal - Memory usage - 303 MBTabItem', 'TabItem3', 'تعرف على Logikal - Memory usage - 303 MB']
+   |    |    |    |    |    |    |    | child_window(title="تعرف على Logikal - Memory usage - 303 MB", auto_id="view_20", control_type="TabItem")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - 'Close'    (L-31274, T-31994, R-31246, B-31966)
+   |    |    |    |    |    |    |    |    | ['Close4', 'CloseButton4', 'Button22']
+   |    |    |    |    |    |    |    |    | child_window(title="Close", control_type="Button")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | TabItem - 'Download history'    (L-31250, T-32000, R-30994, B-31959)
+   |    |    |    |    |    |    |    | ['Download history', 'TabItem4', 'Download historyTabItem']
+   |    |    |    |    |    |    |    | child_window(title="Download history", auto_id="view_20", control_type="TabItem")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - 'Close'    (L-31036, T-31994, R-31008, B-31966)
+   |    |    |    |    |    |    |    |    | ['Close5', 'CloseButton5', 'Button23']
+   |    |    |    |    |    |    |    |    | child_window(title="Close", control_type="Button")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | TabItem - 'Download Python | Python.org'    (L-31012, T-32000, R-30756, B-31959)
+   |    |    |    |    |    |    |    | ['Download Python | Python.org', 'TabItem5', 'Download Python | Python.orgTabItem']
+   |    |    |    |    |    |    |    | child_window(title="Download Python | Python.org", auto_id="view_20", control_type="TabItem")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - 'Close'    (L-30798, T-31994, R-30770, B-31966)
+   |    |    |    |    |    |    |    |    | ['Close6', 'CloseButton6', 'Button24']
+   |    |    |    |    |    |    |    |    | child_window(title="Close", control_type="Button")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | TabItem - '4. Using Python on Windows — Python 3.14.6 documentation'    (L-30774, T-32000, R-30518, B-31959)
+   |    |    |    |    |    |    |    | ['TabItem6', '4. Using Python on Windows — Python 3.14.6 documentation', '4. Using Python on Windows — Python 3.14.6 documentationTabItem']
+   |    |    |    |    |    |    |    | child_window(title="4. Using Python on Windows — Python 3.14.6 documentation", auto_id="view_20", control_type="TabItem")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - 'Close'    (L-30560, T-31994, R-30532, B-31966)
+   |    |    |    |    |    |    |    |    | ['Close7', 'CloseButton7', 'Button25']
+   |    |    |    |    |    |    |    |    | child_window(title="Close", control_type="Button")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - ''    (L-31964, T-32000, R-30518, B-31959)
+   |    |    |    |    |    |    | ['Pane20']
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Button - 'New Tab'    (L-30524, T-32000, R-30496, B-31959)
+   |    |    |    |    |    | ['New Tab', 'New TabButton', 'Button26']
+   |    |    |    |    |    | child_window(title="New Tab", control_type="Button")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - ''    (L-30484, T-32000, R-30341, B-31959)
+   |    |    |    |    |    | ['Pane21']
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - ''    (L-30341, T-32000, R-30209, B-31960)
+   |    |    |    |    |    | ['Pane22']
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Button - 'Open Gemini in Chrome'    (L-30341, T-32000, R-30221, B-31960)
+   |    |    |    |    |    |    | ['Open Gemini in Chrome', 'Open Gemini in ChromeButton', 'Button27']
+   |    |    |    |    |    |    | child_window(title="Open Gemini in Chrome", control_type="Button")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - ''    (L-30219, T-31988, R-30217, B-31972)
+   |    |    |    |    |    |    | ['Pane23']
+   |    |    |    |    | 
+   |    |    |    |    | Pane - ''    (L0, T0, R0, B0)
+   |    |    |    |    | ['Pane24']

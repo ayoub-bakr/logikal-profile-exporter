@@ -1,0 +1,26 @@
+{
+  "main_window": {
+    "title_re": ".*Logikal.*",
+    "backend": "uia"
+  },
+  "cad_window": {
+    "title_re": ".*CAD.*"
+  },
+  "add_profile_dialog": {
+    "title": "Add Profile",
+    "manufacturer_combo_id": "cbManufacturer",
+    "system_combo_id": "cbSystem",
+    "article_list_id": "gridArticles",
+    "ok_button_id": "btnOK"
+  },
+  "export_dialog": {
+    "title": "Export Drawing",
+    "file_type_combo_id": "cbFileType",
+    "file_name_edit_id": "txtFileName",
+    "save_button_id": "btnSave"
+  },
+  "overwrite_dialog": {
+    "title": "Confirm Save As",
+    "yes_button_id": "CommandButton_6"
+  }
+}
