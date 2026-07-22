@@ -1,5 +1,5 @@
 {
-  "logikal_executable": "D:\\Logikal\\LOGIKAL 11.2 Alupco\\LOGIKAL 11.2 Alupco\\WinStart.exe",
+  "logikal_executable": "D:\\New folder\\LOGIKAL 11.2 Alupco\\WinStart.exe",
   "manufacturer": "Schueco",
   "system": "FWS 50 SG",
   "export_root": "D:\\LogikalExports",
@@ -9,5 +9,8 @@
   "dialog_timeout_seconds": 20,
   "file_timeout_seconds": 45,
   "skip_valid_existing_files": true,
-  "validate_with_ezdxf": true
+  "validate_with_ezdxf": true,
+  "min_dxf_size_bytes": 500,
+  "article_limit": 10,
+  "connect_only": true
 }
